@@ -1,0 +1,21 @@
+@()(implicit request: RequestHeader, messages: Messages, pageMeta: PageMeta, wjAssets: WebJarAssets)
+@layouts.basepage {
+} {
+<section class="form-group col-12" >
+  <div class="columns small-12" id="content">
+    <h1>@Messages("homecontroller.contact.form_title")</h1>
+    <form>
+      <label>@Messages("homecontroller.contact.form_name")</label><br>
+      <input id="name"><br>
+      <label>@Messages("homecontroller.contact.form_email")</label><br>
+      <input id="email"><br>
+      <label>@Messages("homecontroller.contact.form_subject")</label><br>
+      <input id="subject"><br>
+      <label>@Messages("homecontroller.contact.form_message")</label><br>
+      <input id="message"><br>
+      <input type="submit" class="button button-default" title="Send"><br>
+    </form>
+  </div>
+</section>
+
+}

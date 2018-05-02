@@ -1,0 +1,37 @@
+@(outString: Html)(implicit request: RequestHeader, messages: Messages, pageMeta: PageMeta, wjAssets: WebJarAssets)
+@layouts.basepage {
+} {
+<section class="form-group col-12" >
+  <div class="columns small-12" id="content">
+    <h1>@Messages("customerscontroller.customers.title")</h1><a href="/customers_create" class="btn btn-block btn-primary btn-lg">Add New</a>
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">List of customers</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody>
+          <tr>
+            <th style="width: 10px">#</th>
+            <th style="width: 100px">Name</th>
+            <th style="width: 100px">Actions</th>
+          </tr>
+          @outString
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+          <li><a href="#">«</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">»</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+}

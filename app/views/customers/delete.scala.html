@@ -1,0 +1,11 @@
+@(msg: Html)(implicit request: RequestHeader, messages: Messages, pageMeta: PageMeta, wjAssets: WebJarAssets)
+@layouts.basepage {
+} {
+<section class="form-group col-12" >
+    <div class="columns small-12" id="content">
+        <h1>@Messages("customerscontroller.customers.title")</h1>
+        <p>@msg</p>
+    </div>
+</section>
+
+}
