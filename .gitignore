@@ -1,0 +1,9 @@
+target/
+project/project
+project/target
+bin/
+logs/
+local.properties
+proguard-sbt.txt
+.history
+.idea
