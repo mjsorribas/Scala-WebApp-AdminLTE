@@ -1,0 +1,24 @@
+homecontroller.index.title = Home Page
+homecontroller.index.keywords = keyword1, keyword2, keyword3
+homecontroller.index.description = Play Simple Web Site
+
+homecontroller.index.top = Play Simple Web Site
+homecontroller.index.openModal = Click Me For A Foundation Modal
+homecontroller.index.modal.title = Awesome
+homecontroller.index.modal.messages = Sample modal
+
+homecontroller.page.messages = Sample test
+
+homecontroller.contact.form_title = Contact us
+homecontroller.contact.form_name = Name
+homecontroller.contact.form_subject = Subject
+homecontroller.contact.form_message = Message
+homecontroller.contact.form_email = E-mail
+
+customerscontroller.customers.title = Customers
+customerscontroller.customers.form_name = Name
+customerscontroller.customers.form_lastname = LastName
+customerscontroller.customers.show_fullname = Full Name
+customerscontroller.customers.show_address = Address
+customerscontroller.customers.show_celphone = CelPhone
+customerscontroller.customers.show_company = Company

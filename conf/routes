@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Map static resources from the web jars to the /assets/lib URL path
+GET     /assets/lib/*file           controllers.WebJarAssets.at(file)
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /page                           controllers.HomeController.page
+
+GET     /contact                           controllers.ContactController.contactform
+GET     /login                           controllers.LoginController.login
+GET     /register                           controllers.RegisterController.register
+POST     /customers                            controllers.CustomersController.index
+POST    /signin                          controllers.LoginController.signin
+
+# Customers
+GET     /customers                           controllers.CustomersController.index
+GET     /customer_show/:id                           controllers.CustomersController.show(id:Int)
+GET     /customer_edit/:id                           controllers.CustomersController.edit(id:Int)
+GET     /customer_delete/:id                           controllers.CustomersController.delete(id:Int)
+GET     /customers_create                           controllers.CustomersController.create
