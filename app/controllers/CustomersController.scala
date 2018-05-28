@@ -7,6 +7,8 @@ import ejisan.play.libs.{ PageMetaSupport, PageMetaApi }
 import play.api.db._
 import play.twirl.api.Html
 import play.api._
+import play.api.data.Forms._
+import play.api.data.validation.Constraints._
 
 class CustomersController  @Inject()(
                                       db: Database,
@@ -83,7 +85,7 @@ class CustomersController  @Inject()(
     val rq =  RequestHeader
     try {
       val stmt = conn.createStatement
-      val rs = stmt.execute                         ("delete from usuarios where id="+id)
+      val rs = stmt.execute("delete from usuarios where id="+id)
     } finally {
       conn.close()
     }
@@ -122,4 +124,35 @@ class CustomersController  @Inject()(
       Ok(views.html.customers.create())
   }
 
+  /**
+    * create customer
+    * @return
+    */
+  def create_customer(name:String, lastname:String) =  {
+    val conn = db.getConnection()
+    val rq =  RequestHeader
+    try {
+      val stmt = conn.createStatement
+      val rs = stmt.executeUpdate("INSERT INTO usuarios (name,lastname)VALUES('" + name + "','" + lastname + "')")
+    } finally {
+      conn.close()
+    }
+    index
+  }
+  /**
+    * update customer
+    * @return
+    */
+  def update_customer(id:Integer,name:String,lastname:String) =  {
+    var outString = ""
+    val conn = db.getConnection()
+    val rq =  RequestHeader
+    try {
+      val stmt = conn.createStatement
+      val rs = stmt.executeQuery("UPDATE usuarios SET name = " + name + ",lastname = " + lastname + " WHERE id = "+ id)
+    } finally {
+      conn.close()
+    }
+    outString
+  }
 }

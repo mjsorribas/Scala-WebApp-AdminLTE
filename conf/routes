@@ -23,3 +23,6 @@ GET     /customer_show/:id                           controllers.CustomersContro
 GET     /customer_edit/:id                           controllers.CustomersController.edit(id:Int)
 GET     /customer_delete/:id                           controllers.CustomersController.delete(id:Int)
 GET     /customers_create                           controllers.CustomersController.create
+POST     /create_customer                           controllers.CustomersController.create_customer(name:String, lastname:String)
+GET     /create_customer                           controllers.CustomersController.create_customer(name:String, lastname:String)
+

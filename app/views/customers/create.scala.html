@@ -4,11 +4,11 @@
 <section class="form-group col-12" >
     <div class="columns small-12" id="content">
         <h1>@Messages("customerscontroller.customers.title")</h1>
-        <form>
+        <form name="create"  action="/create_customer" method="get">
             <label>@Messages("customerscontroller.customers.form_name")</label><br>
-            <input id="name"><br>
+            <input id="name" name="name"><br>
             <label>@Messages("customerscontroller.customers.form_lastname")</label><br>
-            <input id="lastname"><br>
+            <input name="lastname" id="lastname"><br>
             <input type="submit" class="button button-default" title="Send"><br>
         </form>
     </div>
