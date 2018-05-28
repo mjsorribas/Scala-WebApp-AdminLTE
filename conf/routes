@@ -25,4 +25,5 @@ GET     /customer_delete/:id                           controllers.CustomersCont
 GET     /customers_create                           controllers.CustomersController.create
 POST     /create_customer                           controllers.CustomersController.create_customer(name:String, lastname:String)
 GET     /create_customer                           controllers.CustomersController.create_customer(name:String, lastname:String)
+GET     /update_customer                           controllers.CustomersController.update_customer(id:Int,name:String, lastname:String)
 

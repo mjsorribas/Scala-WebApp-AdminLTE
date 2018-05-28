@@ -27,7 +27,12 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "8.0.11",
   jdbc,
   cache,
-  ws
+  ws,
+  "org.scalikejdbc" %% "scalikejdbc"          % "3.1.0",
+  "org.scalikejdbc" %% "scalikejdbc-config"   % "3.1.0",
+  "com.h2database"  %  "h2"                        % "1.4.197",
+  "ch.qos.logback"  %  "logback-classic"           % "1.2.3"
+
 )
 // Web Jars Dependencies
 libraryDependencies ++= Seq(

@@ -9,6 +9,8 @@ import play.twirl.api.Html
 import play.api._
 import play.api.data.Forms._
 import play.api.data.validation.Constraints._
+import scalikejdbc._
+
 
 class CustomersController  @Inject()(
                                       db: Database,
@@ -105,7 +107,7 @@ class CustomersController  @Inject()(
     */
   def edit(id:Int) =  Action {
     implicit request =>
-      Ok(views.html.customers.edit(Html.apply(getcustomerinfo(id))))
+      Ok(views.html.customers.edit(id))
   }
   /**
     * Edit page of customer information
@@ -143,16 +145,32 @@ class CustomersController  @Inject()(
     * update customer
     * @return
     */
-  def update_customer(id:Integer,name:String,lastname:String) =  {
-    var outString = ""
+  def update_customer(id:Int,name:String,lastname:String) =  {
     val conn = db.getConnection()
     val rq =  RequestHeader
     try {
       val stmt = conn.createStatement
-      val rs = stmt.executeQuery("UPDATE usuarios SET name = " + name + ",lastname = " + lastname + " WHERE id = "+ id)
+      val rs = stmt.executeUpdate("UPDATE usuarios SET name = '" + name + "',lastname = '" + lastname + "' WHERE id = "+ id)
     } finally {
       conn.close()
     }
-    outString
+    index
+  }
+
+
+  /**
+    * get data of customer and format for use in view
+    * @return
+    */
+  def getcustomerinfolist(id:Int) =  {
+    val conn = db.getConnection()
+    val rq =  RequestHeader
+    try {
+      val stmt = conn.createStatement
+      val rs = stmt.executeQuery("SELECT id, name,lastname, address, celphone, organization from usuarios where id="+id)
+
+    } finally {
+      conn.close()
+    }
   }
 }

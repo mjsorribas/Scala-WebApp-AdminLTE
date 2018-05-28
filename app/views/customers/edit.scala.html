@@ -1,15 +1,17 @@
-@(outString: Html)(implicit request: RequestHeader, messages: Messages, pageMeta: PageMeta, wjAssets: WebJarAssets)
+@(id:Int)(implicit request: RequestHeader, messages: Messages, pageMeta: PageMeta, wjAssets: WebJarAssets)
 @layouts.basepage {
 } {
 <section class="form-group col-12" >
     <div class="columns small-12" id="content">
         <h1>@Messages("customerscontroller.customers.title")</h1>
-        <form>
+        <form name="update"  action="/update_customer" method="get">
+            <input type="hidden" name="id" id="id" value="@id"><br>
+
             <label>@Messages("customerscontroller.customers.form_name")</label><br>
-            <input id="name"><br>
+            <input id="name" name="name" value=""><br>
             <label>@Messages("customerscontroller.customers.form_lastname")</label><br>
-            <input id="lastname"><br>
-            <input type="submit" class="button button-default" title="Send"><br>
+            <input name="lastname" id="lastname" value=""><br>
+            <input type="submit" class="button button-default" value="Update" title="Update"><br>
         </form>
     </div>
 </section>
