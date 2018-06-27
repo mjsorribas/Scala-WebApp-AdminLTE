@@ -6,7 +6,7 @@ import play.api.i18n._
 import ejisan.play.libs.{ PageMetaSupport, PageMetaApi }
 import courier._, Defaults._
 
-class LoginController @Inject()(
+class AuthController @Inject()(
                                  val messagesApi: MessagesApi,
                                  val pageMetaApi: PageMetaApi,
                                  implicit val wja: WebJarAssets

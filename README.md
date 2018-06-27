@@ -1,5 +1,5 @@
 # Scala-WebApp-AdminLTE
-## Play App
-## AdminLTE Template
-##Mysql
+## Play2 App
+## Mysql
+## AdminLTE 2.X Template
 
