@@ -14,10 +14,14 @@ class LoginController @Inject()(
 
 
   def login = Action { implicit request=>
-    Ok(views.html.forms.login())
+    Ok(views.html.auth.login())
   }
 
   def signin = Action {implicit request=>
     Ok(views.html.index())
+  }
+
+  def register = Action { implicit request=>
+    Ok(views.html.auth.register())
   }
 }
