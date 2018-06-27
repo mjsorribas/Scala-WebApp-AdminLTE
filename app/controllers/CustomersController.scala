@@ -32,26 +32,25 @@ class CustomersController  @Inject()(
     * @return
     */
   def getcustomers =  {
-    var outString = ""
+    var datatable = ""
     val conn = db.getConnection()
 
     try {
       val stmt = conn.createStatement
       val rs = stmt.executeQuery("SELECT id, name,lastname from usuarios")
       while (rs.next()) {
-        outString += "<tr><td style='width:15%;'><a href='/customer_show/"+rs.getString("id")+"'>"+rs.getString("id")+"</a></td>"
-        outString += "<td style='width:55%;'>"+ rs.getString("name").capitalize + ' ' + rs.getString("lastname").capitalize + "</td>"
-        outString += "<td style='width:30%;'>"
-        outString += "<a class='margin' href='/customer_show/"+rs.getString("id")+"'><i class='fa fa-eye'></i></a>"
-        outString += "<a  class='margin' href='/customer_edit/"+rs.getString("id")+"'><i class='fa fa-pencil'></i></a>"
-        outString += "<a  class='margin' href='/customer_delete/"+rs.getString("id")+"'><i class='fa fa-trash'></i></a>"
-        outString +="</td></tr>"
-
+        datatable += "<tr><td style='width:15%;'><a href='/customer_show/"+rs.getString("id")+"'>"+rs.getString("id")+"</a></td>"
+        datatable += "<td style='width:55%;'>"+ rs.getString("name").capitalize + ' ' + rs.getString("lastname").capitalize + "</td>"
+        datatable += "<td style='width:30%;'>"
+        datatable += "<a class='margin' href='/customer_show/"+rs.getString("id")+"'><i class='fa fa-eye'></i></a>"
+        datatable += "<a  class='margin' href='/customer_edit/"+rs.getString("id")+"'><i class='fa fa-pencil'></i></a>"
+        datatable += "<a  class='margin' href='/customer_delete/"+rs.getString("id")+"'><i class='fa fa-trash'></i></a>"
+        datatable +="</td></tr>"
       }
     } finally {
       conn.close()
     }
-    outString
+    datatable
   }
 
   /**

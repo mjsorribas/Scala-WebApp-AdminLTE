@@ -1,4 +1,4 @@
-@(outString: Html)(implicit request: RequestHeader, messages: Messages, pageMeta: PageMeta, wjAssets: WebJarAssets)
+@(datatable: Html)(implicit request: RequestHeader, messages: Messages, pageMeta: PageMeta, wjAssets: WebJarAssets)
 @layouts.basepage {
 } {
 <section class="form-group col-12" >
@@ -17,7 +17,7 @@
             <th style="width: 100px">Name</th>
             <th style="width: 100px">Actions</th>
           </tr>
-          @outString
+          @datatable
           </tbody>
         </table>
       </div>
