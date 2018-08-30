@@ -126,7 +126,7 @@ class CustomersController  @Inject()(
   }
 
   /**
-    * create customer
+    * create customer : method to insert in database.
     * @return
     */
   def create_customer(name:String, lastname:String) =  {
