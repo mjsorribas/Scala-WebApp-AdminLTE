@@ -129,12 +129,14 @@ class CustomersController  @Inject()(
     * create customer : method to insert in database.
     * @return
     */
-  def create_customer(name:String, lastname:String) =  {
+  def create_customer(name:String, lastname:String, email:String) =  {
     val conn = db.getConnection()
     val rq =  RequestHeader
     try {
       val stmt = conn.createStatement
-      val rs = stmt.executeUpdate("INSERT INTO usuarios (name,lastname)VALUES('" + name + "','" + lastname + "')")
+      val rs = stmt.executeUpdate("INSERT INTO usuarios " +
+        "                         (name,lastname,email)" +
+        "                         VALUES('" + name + "','" + lastname + "', '" + email + "')")
     } finally {
       conn.close()
     }
@@ -144,12 +146,14 @@ class CustomersController  @Inject()(
     * update customer
     * @return
     */
-  def update_customer(id:Int,name:String,lastname:String) =  {
+  def update_customer(id:Int,name:String,lastname:String,email:String) =  {
     val conn = db.getConnection()
     val rq =  RequestHeader
     try {
       val stmt = conn.createStatement
-      val rs = stmt.executeUpdate("UPDATE usuarios SET name = '" + name + "',lastname = '" + lastname + "' WHERE id = "+ id)
+      val rs = stmt.executeUpdate("UPDATE usuarios " +
+        "                         SET name = '" + name + "',lastname = '" + lastname + "',email = '" + email + "'  " +
+        "                         WHERE id = "+ id)
     } finally {
       conn.close()
     }
