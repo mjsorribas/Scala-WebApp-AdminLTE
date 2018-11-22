@@ -10,3 +10,5 @@ docker run -it --net=host  -p 9000:9000 --name scalapp scalawebapp:latest bash
 docker run -it --net=host  -p 9000:9000 --name scalapp scalawebapp:latest bash
 The database requiere only this tables:
 
+docker run -it --net=host  -p 9000:9000 --mount type=bind,source=$(pwd)/,target=/apps  --name scalapp scalawebapp:latest
+
